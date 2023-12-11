@@ -23,9 +23,9 @@ const SideNav = () => {
         }]
     const [activeIndex,setActiveIndex] = useState(0);
     return(
-        <div>
+        <div className='shadow-sm border-r h-full'>
             <div className='p-5 border-b'>
-                <Image src='/logoipsum-297.svg' width={150} height={100}/>
+                <Image src='/logoipsum-297.svg' width={150} height={100} alt='logo image'/>
             </div>
             <div className='flex flex-col float-left w-full'>
                 {menuList.map((item,index)=>(
