@@ -15,12 +15,12 @@ const SideNav = () => {
         icon:File,
         path:'/files'
     },
-    {
-        id:3,
-        name:'Upgrade',
-        icon:Shield,
-        path:'/upgrade'
-    }]
+        {
+            id:3,
+            name:'Upgrade',
+            icon:Shield,
+            path:'/upgrade'
+        }]
     const [activeIndex,setActiveIndex] = useState(0);
     return(
         <div>
@@ -29,9 +29,9 @@ const SideNav = () => {
             </div>
             <div className='flex flex-col float-left w-full'>
                 {menuList.map((item,index)=>(
-                    <button className={`flex gap-2 p-4 px-0 hover:bg-gray-100 w-full text-gray-500 ${activeIndex == index ? 'bg-blue-50 text-primary':null} onClick={()=>setActiveIndex(index)}`}>
-                        <item.icon/>
-                        <h2>{item.name}</h2>
+                    <button key={item.id} className={`flex gap-2 p-4 px-0 hover:bg-gray-100 w-full text-gray-500 ${activeIndex===index?'bg-blue-50 text-primary':null}`} onClick={()=>setActiveIndex(index)}>
+                        <item.icon className='mr-2'/>
+                        <span>{item.name}</span>
                     </button>
                 ))}
             </div>
@@ -39,4 +39,4 @@ const SideNav = () => {
     )
 }
 
-export default SideNav;
+export default SideNav
